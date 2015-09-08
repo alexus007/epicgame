@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alexus007/epicgame/issues"
   },
-  "homepage": "https://github.com/alexus007/epicgame#readme"
+  "homepage": "https://github.com/alexus007/epicgame#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
