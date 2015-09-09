@@ -1,5 +1,5 @@
-<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+<fest:template xmlns:fest="http://fest.mail.ru">
     <div>
-        <h1>Epic Game</h1>
+        <h1>Test</h1>
     </div>
 </fest:template>

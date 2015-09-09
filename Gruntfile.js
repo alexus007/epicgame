@@ -10,11 +10,11 @@ module.exports = function (grunt) {
         web_server: {
             options: {
                 cors: true,
-                port: 8000,
-                nevercache: true,
-                logRequests: true
+                port: 8080,
+                nevercache: false,
+                logRequests: false,
             },
-            foo: 'bar' // For some reason an extra key with a non-object value is necessary
+            path: 'public_html',
         },
         fest:{
             templates:{
@@ -24,6 +24,40 @@ module.exports = function (grunt) {
                     src: '*.xml',
                     dest:'public_html/js/tmpl'
                 }],
+
+                template:function(data){
+
+                return grunt.template.process(
+                    'var <%= name %>Teml = <%= contents %>;',
+                    {data: data}
+                );
+
+                },
+            },
+        },
+        watch: {
+            fest: {
+                files: ['templates/*.xml'],
+                tasks: ['fest'],
+                options: {
+                    atBegin: true
+                }
+            },
+            server: {
+                files: [
+                    'public_html/js/**/*.js',
+                    'public_html/css/**/*.css'
+                ],
+                options: {
+                    interrupt: true,
+                    livereload: true
+                }
+            }
+        },
+        concurrent:{
+            target: ['web_server', 'watch'],
+            options: {
+                logConcurrentOutput: true,
             }
         }
 
@@ -33,7 +67,9 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-sell');
     grunt.loadNpmTasks('grunt-web-server');
     grunt.loadNpmTasks('grunt-fest');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-concurrent');
 
-    grunt.registerTask('default', ['web_server', 'fest:templates']);
+    grunt.registerTask('default', ['concurrent']);
 };
 
