@@ -23,6 +23,7 @@
     "grunt-fest": "^0.1.6",
     "grunt-http-server": "^1.10.0",
     "grunt-shell": "^1.1.2",
-    "grunt-web-server": "^1.2.3"
+    "grunt-web-server": "^1.2.3",
+    "underscore": "^1.8.3"
   }
 }
