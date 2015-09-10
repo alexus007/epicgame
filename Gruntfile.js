@@ -16,24 +16,23 @@ module.exports = function (grunt) {
             },
             path: 'public_html',
         },
-        fest:{
-            templates:{
+        fest: {
+            templates: {
                 files: [{
-                    expand:true,
+                    expand: true,
                     cwd: 'templates',
                     src: '*.xml',
-                    dest:'public_html/js/tmpl'
+                    dest: 'public_html/js/tmpl'
                 }],
-
-                template:function(data){
-
-                return grunt.template.process(
-                    'var <%= name %>Teml = <%= contents %>;',
-                    {data: data}
-                );
-
-                },
-            },
+                options: {
+                    template: function (data) {
+                        return grunt.template.process(
+                            'var <%= name %>Tmpl = <%= contents %> ;',
+                            {data: data}
+                        );
+                    }
+                }
+            }
         },
         watch: {
             fest: {
