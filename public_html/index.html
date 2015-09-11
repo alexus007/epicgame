@@ -1,35 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/main.css"/>
-    <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/lib/underscore-min.js"></script>
-    <script type="text/javascript" src="js/lib/backbone-min.js"></script>
-    <script type="text/javascript" src="js/tmpl/main.js"></script>
-    <script type="text/javascript" src="js/tmpl/login.js"></script>
-    <script type="text/javascript" src="js/tmpl/scoreboard.js"></script>
-    <script type="text/javascript" src="js/tmpl/game.js"></script>
-</head>
-<body>
-<div id="page"></div>
-<script>
-    var Router = Backbone.Router.extend({
-        routes: {
-            'scoreboard': 'scoreboardAction',
-            'game': 'gameAction',
-            '*default': 'defaultActions*'
-        },
-
-        scoreboardAction: function(){
-            alert("scoreboard");
-        },
-        gameAction: function(){
-            alert("game");
-        }
-
-    });
-</script>
-</body>
-</html>
+<html><head>
+    <meta charset="utf-8" />
+    <title><!-- TODO --></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head><body>
+    <div id="page"></div>
+    <script data-main="js/main" src="js/lib/require.js"></script>
+</body></html>

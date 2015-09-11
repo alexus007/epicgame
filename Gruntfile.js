@@ -1,20 +1,14 @@
-/**
- * Created by Alex on 09.09.2015.
- */
-
 module.exports = function (grunt) {
 
     grunt.initConfig({
-
-        concat: {},
-        web_server: {
+        shell: {
             options: {
-                cors: true,
-                port: 8080,
-                nevercache: false,
-                logRequests: false,
+                stdout: true,
+                stderr: true
             },
-            path: 'public_html',
+            server: {
+                command: 'java -cp L1.2-1.0-jar-with-dependencies.jar main.Main 8080'
+            }
         },
         fest: {
             templates: {
@@ -27,7 +21,7 @@ module.exports = function (grunt) {
                 options: {
                     template: function (data) {
                         return grunt.template.process(
-                            'var <%= name %>Tmpl = <%= contents %> ;',
+                            'define(function () { return <%= contents %> ; });',
                             {data: data}
                         );
                     }
@@ -39,6 +33,7 @@ module.exports = function (grunt) {
                 files: ['templates/*.xml'],
                 tasks: ['fest'],
                 options: {
+                    interrupt: true,
                     atBegin: true
                 }
             },
@@ -53,22 +48,20 @@ module.exports = function (grunt) {
                 }
             }
         },
-        concurrent:{
-            target: ['web_server', 'watch'],
+        concurrent: {
+            target: ['watch', 'shell'],
             options: {
-                logConcurrentOutput: true,
+                logConcurrentOutput: true
             }
         }
-
     });
 
-    //grunt.loadNpmTasks('grunt-contrib-concat');
-    //grunt.loadNpmTasks('grunt-sell');
-    grunt.loadNpmTasks('grunt-web-server');
-    grunt.loadNpmTasks('grunt-fest');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-fest');
 
     grunt.registerTask('default', ['concurrent']);
-};
+
+}
 
