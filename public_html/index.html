@@ -4,31 +4,8 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/main.css"/>
-    <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/lib/underscore-min.js"></script>
-    <script type="text/javascript" src="js/lib/backbone-min.js"></script>
-    <script type="text/javascript" src="js/tmpl/main.js"></script>
-    <script type="text/javascript" src="js/tmpl/login.js"></script>
-    <script type="text/javascript" src="js/tmpl/scoreboard.js"></script>
-    <script type="text/javascript" src="js/tmpl/game.js"></script>
 </head>
 <body>
 <div id="page"></div>
-<script>
-    var Router = Backbone.Router.extend({
-        routes: {
-            'scoreboard': 'scoreboardAction',
-            'game': 'gameAction',
-            '*default': 'defaultActions*'
-        },
-
-        scoreboardAction: function(){
-            alert("scoreboard");
-        },
-        gameAction: function(){
-            alert("game");
-        }
-
-    });
-</script>
+    <script data-main="js/config.js" src="js/lib/require.js"></script>
 </body>

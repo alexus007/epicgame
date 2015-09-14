@@ -1,28 +1,19 @@
 define([
-    'backbone',
-    'tmpl/main'
+    'app',
+    'tmpl/main',
+    'views/AbstractScreen'
 ], function(
-    Backbone,
-    tmpl
+    app,
+    tmpl,
+    Abstract
 ){
 
-    var View = Backbone.View.extend({
-
+    var View = Abstract.extend({
+        el: '#page',
         template: tmpl,
-        initialize: function () {
-            // TODO
-        },
-        render: function () {
-            // TODO
-        },
-        show: function () {
-            // TODO
-        },
-        hide: function () {
-            // TODO
-        }
+        templateArg: null,
 
     });
 
-    return new View();
+    return View;
 });

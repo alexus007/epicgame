@@ -1,28 +1,20 @@
 define([
-    'backbone',
-    'tmpl/scoreboard'
+    'app',
+    'tmpl/scoreboard',
+    'views/AbstractScreen'
 ], function(
     Backbone,
-    tmpl
+    tmpl,
+    Abstract
 ){
 
-    var View = Backbone.View.extend({
+    var View = Abstract.extend({
 
+        el: '#page',
         template: tmpl,
-        initialize: function () {
-            // TODO
-        },
-        render: function () {
-            // TODO
-        },
-        show: function () {
-            // TODO
-        },
-        hide: function () {
-            // TODO
-        }
+        templateArg: null,
 
     });
 
-    return new View();
+    return View;
 });

@@ -1,29 +1,54 @@
 define([
-    'backbone'
+    'app',
+    'views/ViewManager'
 ], function(
-    Backbone
+    app,
+    ViewManager
 ){
 
     var Router = Backbone.Router.extend({
         routes: {
             'scoreboard': 'scoreboardAction',
-            'game': 'gameAction',
             'login': 'loginAction',
-            '*default': 'defaultActions'
+            '*default': 'defaultAction'
         },
-        defaultActions: function () {
-            // TODO
+
+        viewManager: null,
+
+        initialize: function () {
+            this.viewManager = new ViewManager();
         },
+
+        navigateToMain: function() {
+            this.navigateTo("#");
+        },
+
+        navigateTo: function(url) {
+            this.navigate(url, {trigger: true});
+        },
+
+        showView: function(view) {
+            console.log(view);
+            this.viewManager.displayView(view);
+        },
+
+        /* ================ Navigate Utils ================ */
+
+        defaultAction: function () {
+            this.showView(this.viewManager.MAIN_VIEW);
+        },
+
+        loginAction: function() {
+            this.showView(this.viewManager.LOGIN_VIEW);
+        },
+
         scoreboardAction: function () {
-            // TODO
+            this.showView(this.viewManager.SCOREBOARD_VIEW);
         },
-        gameAction: function () {
-            // TODO
-        },
-        loginAction: function () {
-            // TODO
-        }
+
+
+
     });
 
-    return new Router();
+    return Router;
 });

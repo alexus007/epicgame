@@ -1,28 +1,12 @@
-require.config({
-    urlArgs: "_=" + (new Date()).getTime(),
-    baseUrl: "js",
-    paths: {
-        jquery: "lib/jquery",
-        underscore: "lib/underscore",
-        backbone: "lib/backbone"
-    },
-    shim: {
-        'backbone': {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        'underscore': {
-            exports: '_'
-        }
-    }
-});
-
 define([
-    'backbone',
+    'app',
     'router'
 ], function(
-    Backbone,
-    router
+    app,
+    Router
 ){
+    app.router = new Router();
+
+
     Backbone.history.start();
 });
