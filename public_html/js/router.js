@@ -8,8 +8,9 @@ define([
 
     var Router = Backbone.Router.extend({
         routes: {
-            'scoreboard': 'scoreboardAction',
-            'login': 'loginAction',
+            'game' : 'gameAction',
+            'scoreboard' : 'scoreboardAction',
+            'login' : 'loginAction',
             '*default': 'defaultAction'
         },
 
@@ -45,6 +46,10 @@ define([
         scoreboardAction: function () {
             this.showView(this.viewManager.SCOREBOARD_VIEW);
         },
+
+        gameAction: function() {
+            this.showView(this.viewManager.GAME_VIEW);
+        }
 
 
 

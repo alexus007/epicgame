@@ -2,11 +2,13 @@ define([
     'views/main',
     'views/login',
     'views/scoreboard',
+    'views/game',
     'app'
 ], function(
     Main,
     Login,
     Scoreboard,
+    Game,
     app
 ){
 
@@ -15,11 +17,13 @@ define([
         MAIN_VIEW: "main",
         LOGIN_VIEW: "login",
         SCOREBOARD_VIEW: "scoreboard",
+        GAME_VIEW: "game",
 
         views: {
             MAIN_VIEW: null,
             LOGIN_VIEW: null,
             SCOREBOARD_VIEW: null,
+            GAME_VIEW: null,
         },
 
         currentView: null,
@@ -30,6 +34,7 @@ define([
             this.views[this.MAIN_VIEW] = new Main();
             this.views[this.LOGIN_VIEW] = new Login();
             this.views[this.SCOREBOARD_VIEW] = new Scoreboard();
+            this.views[this.GAME_VIEW] = new Game();
 
             this.listenTo(app.wsEvents, "wsStartGame", this.startGame);
         },
