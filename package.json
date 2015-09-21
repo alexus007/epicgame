@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/alexus007/epicgame#readme",
   "devDependencies": {
+    "bootstrap": "^3.3.5",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^2.0.3",
     "grunt-contrib-watch": "^0.6.1",
