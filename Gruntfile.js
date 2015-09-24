@@ -28,6 +28,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+        sass: {},
         watch: {
             fest: {
                 files: ['templates/*.xml'],
@@ -60,6 +61,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-fest');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.registerTask('default', ['concurrent']);
 
