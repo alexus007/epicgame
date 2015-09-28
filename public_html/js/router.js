@@ -11,6 +11,7 @@ define([
             'game' : 'gameAction',
             'scoreboard' : 'scoreboardAction',
             'login' : 'loginAction',
+            'registration' : 'registrationAction',
             '*default': 'defaultAction'
         },
 
@@ -49,6 +50,10 @@ define([
 
         gameAction: function() {
             this.showView(this.viewManager.GAME_VIEW);
+        },
+
+        registrationAction: function() {
+            this.showView(this.viewManager.REGISTRATION_VIEW);
         }
 
 

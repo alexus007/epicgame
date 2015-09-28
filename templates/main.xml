@@ -1,13 +1,28 @@
 <?xml version="1.0"?>
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <h1>Hello,<fest:space/><fest:value output="text">json.name</fest:value></h1>
-    <div class="container">
-        <div class="main__menu">
-            <ul>
-                <li><a href="#scoreboard">Scoreboard</a></li>
-                <li><a href="#game">Game</a></li>
-                <li><a href="#login">Login</a></li>
-            </ul>
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                    </div>
+                </div>
+                <div class="inner cover">
+                    <h1 class="cover-heading light">Air Hockey</h1>
+                    <div class="inner">
+                        <ul class="nav masthead-nav">
+                            <li><a href="#scoreboard">Scoreboard</a></li>
+                            <li><a href="#game">Start Game</a></li>
+                            <li><a href="#login">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
 </fest:template>

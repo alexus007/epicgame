@@ -1,3 +1,65 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <h1>Scoreboard page</h1>
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h1 class="cover-heading light">Scoreboard</h1>
+                </div>
+            </div>
+            <div class="inner cover">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="center">User</th>
+                                <th class="center">Games</th>
+                                <th class="center">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Alex</td>
+                                <td>50</td>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Carno</td>
+                                <td>50</td>
+                                <td>130</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Stas</td>
+                                <td>50</td>
+                                <td>130</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <div class="row">
+                        <ul class="nav masthead-nav">
+                            <li>
+                                <a href="/">Back</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </fest:template>

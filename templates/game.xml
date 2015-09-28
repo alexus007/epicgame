@@ -1,3 +1,28 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-    <h1>Game</h1>
+
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h1 class="cover-heading light">Game</h1>
+                </div>
+            </div>
+            <div class="inner cover">
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <div class="row">
+                        <ul class="nav masthead-nav">
+                            <li>
+                                <a href="/">Back</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </fest:template>
