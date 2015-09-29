@@ -3,12 +3,12 @@ define([
     'tmpl/main',
     'views/AbstractScreen',
     'utils/timer',
-    'utils/random'
+    'utils/imagesCreater'
 ], function (app,
              tmpl,
              Abstract,
              Timer,
-             Random
+             Images
 ) {
 
     var View = Abstract.extend({
@@ -17,22 +17,22 @@ define([
         templateArg: null,
 
         initialize: function () {
-            var timer = new Timer({interval: 5000, method: this.lightAnimation});
-            timer.start();
+
+                var timer = new Timer({interval: 5000, method: this.lightAnimation});
+                timer.start();
+
+                var timer1 = new Timer({interval: 10000, method: this.lightAnimation});
+                timer1.start();
+
+                var timer2 = new Timer({interval: 20000, method: this.lightAnimation});
+                timer2.start();
+
         },
 
         lightAnimation: function () {
-            var imagesSrc = ['/images/round.png', '/images/round1.png', '/images/round2.png', '/images/round3.png'];
-            var positionRandom = new Random({min:0,max:100}).getRandomArbitary();
-            var imageSrcRandom = new Random({min:0, max:imagesSrc.length - 1}).getRandomInt();
-            console.log(positionRandom, imageSrcRandom);
-            var img = new Image();
-            img.src = imagesSrc[imageSrcRandom];
-            img.which = 100;
-            img.height = 100;
-            this.$('body').append(img);
-            this.$(img).css({position:'absolute', left: positionRandom + "%", top: positionRandom + "%", zIndex:0}).animate({width:200,height:200,opacity:0.99},1000);
-            this.$(img).animate({opacity:0},1000);
+            var images = new Images({width:50, height:50, left: true, top: true}).getImage();
+            var images2 = new Images({width:100, height:100, right: true, top: true}).getImage();
+            var images3 = new Images({width:150, height:150, top: true, bottom: true}).getImage();
         }
 
     });
