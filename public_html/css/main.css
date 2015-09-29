@@ -1,7 +1,7 @@
 /*
  * Globals
  */
-
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 /* Links */
 a,
 a:focus,
@@ -34,6 +34,7 @@ body {
     text-align: center;
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
     box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    font-family: Helvetica,Arial,sans-serif;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -107,11 +108,27 @@ body {
 .table thead th.center {
     text-align: center;
 }
-
-.light {
-    text-shadow: #75D9F9 0 0 10px;
+.cover-heading {
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: bolder;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: #0A84C3 0 0 30px;
 }
-
+.light {
+    animation: lower 50s linear infinite;
+}
+@keyframes lower {
+    0%,10%,20%,30%,40%,50%,60%,70%,80%,90%,100% {
+        opacity:0.99; text-shadow: #75D9F9 0 0 45px;
+    }
+    0%,9%,19%,29%,39%,49%,59%,69%,79%,89%,99% {
+        text-shadow: #0A84C3 0 0 30px;
+    }
+}
+.round {
+    text-shadow: #0A84C3 0 0 30px;
+}
 /*
  * Affix and center
  */
