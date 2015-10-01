@@ -1,13 +1,20 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
+    'backbone',
+    'utils/storage/form_storage'
 ], function(
     $,
     _,
-    Backbone
+    Backbone,
+    FormStorage
 ){
-    var app = {};
+    var app = {
+        "storage": {
+            "loginStorage": new FormStorage("login"),
+            "registerStorage": new FormStorage("register")
+        }
+    };
     app.wsEvents = new _.extend({}, Backbone.Events);
     return app;
 });
