@@ -51,7 +51,7 @@ define([
 
         this.animateImage = function() {
             $(this.img).animate({width:200,height:200,opacity:0.5},5000);
-            $(this.img).animate({width:this.width,height:this.width,opacity:0},5000, function() {$(this).remove()});
+            $(this.img).animate({width:0,height:0,opacity:0},5000, function() {$(this).remove()});
         }
 
     };

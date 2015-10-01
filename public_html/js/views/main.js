@@ -21,7 +21,7 @@ define([
                 var self = this;
                 setInterval(function() {
                     self.showScreensaver();
-                    console.log('tick');
+                    //console.log('tick');
                 }, 25000);
 
         },
